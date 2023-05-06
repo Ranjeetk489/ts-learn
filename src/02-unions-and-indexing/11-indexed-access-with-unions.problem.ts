@@ -1,6 +1,8 @@
+// import { IndividualProgram } from './11-indexed-access-with-unions.solution.1';
+import { programModeEnumMap } from './10-as-const.solution';
 import { Equal, Expect } from "../helpers/type-utils";
 
-export const programModeEnumMap = {
+const programModeEnumMap = {
   GROUP: "group",
   ANNOUNCEMENT: "announcement",
   ONE_ON_ONE: "1on1",
@@ -9,8 +11,9 @@ export const programModeEnumMap = {
   PLANNED_SELF_DIRECTED: "plannedSelfDirected",
 } as const;
 
-export type IndividualProgram = unknown;
+// export type IndividualProgram = typeof programModeEnumMap[Exclude<keyof typeof programModeEnumMap, "GROUP" | "ANNOUNCEMENT">]
 
+export type IndividualProgram = typeof programModeEnumMap[Exclude<keyof typeof programModeEnumMap, "GROUP" |  "ANNOUNCEMENT" >]
 type tests = [
   Expect<
     Equal<

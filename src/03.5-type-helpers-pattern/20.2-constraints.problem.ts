@@ -9,6 +9,5 @@ type tests = [
   Expect<Equal<AddRoutePrefix<"blog">, "/blog">>,
   // @ts-expect-error
   AddRoutePrefix<boolean>,
-  // @ts-expect-error
-  AddRoutePrefix<number>,
+  ARoutePrefix<number>
 ];

@@ -14,7 +14,7 @@ type Fruit =
       color: "orange";
     };
 
-type TransformedFruit = unknown;
+type TransformedFruit = Extract<Fruit, >
 
 type tests = [
   Expect<

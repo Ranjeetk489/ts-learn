@@ -6,7 +6,16 @@ interface FruitMap {
   orange: "orange";
 }
 
-type TransformedFruit = unknown;
+type Fmap = {
+  t :"tag"
+  p: "pag"
+}
+
+type TransformedFruit = {
+  [F in keyof FruitMap]: `${F}:${FruitMap[F]}`;
+}[keyof FruitMap];
+
+type test = {}
 
 type tests = [
   Expect<

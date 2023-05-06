@@ -14,7 +14,12 @@ export type Event =
       event: KeyboardEvent;
     };
 
-type NonKeyDownEvents = unknown;
+type Ex<T, U> = T extends U ? never : T
+
+type NonKeyDownEvents = Ex<Event, {type : "keydown"}>;
+
+
+
 
 type tests = [
   Expect<

@@ -11,6 +11,11 @@ const makeQuery = (
   },
 ) => {};
 
+function make() {
+  return "hey"
+}
+
+typeof make
 type MakeQueryParameters = Parameters<typeof makeQuery>;
 
 type tests = [
